@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <h2>Register</h2>
+    <form class="container col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if messages %}
+        <div class="alert alert-primary" role="alert">
+            {% for message in messages %}
+            {{ message}}
+            {% endfor %}
+        </div>
+            <ul class="messages">
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message}}</li>
+        </ul>
+        {% endif %}
+        <div class="mb-3">
+            <label  class="form-label">First Name</label>
+            <input required type="text" name="first_name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Last Nmae</label>
+            <input required type="text" name="last_name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">UserName</label>
+            <input required type="text" name="username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">PassWord</label>
+            <input class="form-control"name="password" type="password">
+        </div>
+        
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
+</div>
+     

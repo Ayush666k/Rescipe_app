@@ -1,0 +1,40 @@
+{% extends  "common.html" %}
+
+   {% block start %}
+    <h1>hey i just feel so happy</h1>
+    <h4 style="color: aqua;">the world is such good place</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minus unde explicabo placeat repellendus pariatur dolorum.
+       Excepturi iure corporis deleniti eligendi ea voluptas a at, explicabo dolorum rerum delectus sunt?</p>
+
+    <a href="/feedback">feedback</a>
+    <a href="/contact">contact</a>
+    <table >
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>role</th>
+                <td>age</td>
+                <th>they vote</th>
+            </tr>
+        </thead>
+       
+
+        {% for people in peoples %}
+        <tr>
+            <td style="color: orange;">{{people.id}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.role}}</td>
+            <td>{{people.age}}</td>
+            <td>
+            {% if age >= 18%}
+            yes
+            {% else %}
+            no
+            {% endif %}
+
+            </td>>
+        </tr>
+        {% endfor %}
+    </table>
+   {% endblock%}
